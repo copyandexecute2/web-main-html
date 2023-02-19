@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games</title>
+  </head>
+  <body>
+    <h1>Willkommen zu meinem Spiel</h1>
+    <p>Klicke auf den Button, um Punkte zu sammeln:</p>
+    <button id="button" disabled>Klicken Sie hier</button>
+    <p>Punkte: <span id="score">0</span></p>
+    <button id="start">Spiel starten</button>
+    
+    <script>
+      // Fügen Sie hier den JavaScript-Code für das Spiel ein
+      var startButton = document.getElementById("start");
+      var gameButton = document.getElementById("button");
+      var score = document.getElementById("score");
+
+      var points = 0;
+
+      startButton.addEventListener("click", function() {
+        startButton.disabled = true;
+        gameButton.disabled = false;
+        gameButton.focus();
+      });
+
+      gameButton.addEventListener("click", function() {
+        points++;
+        score.innerText = points;
+      });
+    </script>
+  </body>
+</html>
